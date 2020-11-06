@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Product from "./components/Product";
 import About from "./components/About";
@@ -10,7 +9,7 @@ function App() {
   return (
     <div>
       <Router>
-        <div>
+        <header>
           <nav>
             <li>
               <Link to="/">Home</Link>
@@ -22,18 +21,20 @@ function App() {
               <Link to="/about">About</Link>
             </li>
           </nav>
-        </div>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/product">
-            <Product />
-          </Route>
-        </Switch>
+        </header>
+        <body>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/product">
+              <Product />
+            </Route>
+          </Switch>
+        </body>
       </Router>
     </div>
   );
